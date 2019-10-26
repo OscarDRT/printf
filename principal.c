@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 		{
 			if (*recorrer == *(ops[i].formato))
 			{
-				va_arg(valist, ops[i].f);
+				ops[i].f(va_list valist);
 			}
 			i++;
 		}
