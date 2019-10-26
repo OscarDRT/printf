@@ -4,7 +4,7 @@
 int _printf(const char *format, ...)
 {
 	formaton ops[] = {
-	{'%', op_mod},
+	/*{'%', op_mod},*/
 	{"c", op_char},
 	{"s", op_string},
 	{"d", op_int_b10},
@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 		{
 			if (*recorrer == *(ops[i].formato))
 			{
-				ops[i].f(o);
+				(ops[i].f)(o);
 			}
 			i++;
 		}

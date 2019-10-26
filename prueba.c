@@ -2,6 +2,6 @@
 
 int main (void)
 {
-	_printf("hola mun%");
+	_printf("hola mun%  %c %s", 'H', " olberton");
 	return 0;
 }
