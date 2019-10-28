@@ -1,6 +1,4 @@
 #include "holberton.h"
-
-
 int _printf(const char *format, ...)
 {
 	data ops[] = {
@@ -20,17 +18,16 @@ int _printf(const char *format, ...)
 	va_start(o, format);
 	for (recorrer = format; recorrer && *recorrer != '\0';)
 	{
-		while (*recorrer != '%')
+		while (*recorrer != '%' && *recorrer != '\0')
 		{
 			_putchar(*recorrer);
 			recorrer++;
 		}
-		recorrer++;
-		while (*recorrer == ' ')
-		{
+		if (*recorrer != '\0')
 			recorrer++;
-		}
-		while (recorrer != NULL)
+		while (*recorrer == ' ')
+			recorrer++;
+		while (recorrer != NULL && *recorrer != '\0')
 		{
 			if (a == 1)
 				i = 0;
@@ -48,13 +45,17 @@ int _printf(const char *format, ...)
 			if (*recorrer == *(ops[i].formato))
 			{
 				ops[i].f(o);
-				recorrer++;
+				while (*(recorrer + 1) != '%' && *recorrer != '\0')
+				{
+					recorrer++;
+					if (*recorrer == '\0')
+						break;
+					_putchar(*recorrer);
+				}
 				a = 1;
 			}
 			i++;
 		}
-		
 	}
-	
 	return (0);
 }
