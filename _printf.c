@@ -2,18 +2,18 @@
 int _printf(const char *format, ...)
 {
 	data ops[] = {
-	/*{'%', op_mod},*/
+	    /*{'%', op_mod},*/
 	{"c", op_char},
-	/**
 	{"s", op_string},
+	    /**
 	{"d", op_int_b10},
 	{"i", op_integer},
 	*/
-	{NULL, NULL}};
-	
+	    {NULL, NULL}};
+
 	int a, i = 0;
 	const char *recorrer;
-	
+
 	va_list o;
 	va_start(o, format);
 	for (recorrer = format; recorrer && *recorrer != '\0';)
@@ -23,10 +23,19 @@ int _printf(const char *format, ...)
 			_putchar(*recorrer);
 			recorrer++;
 		}
+		if (*(recorrer + 1) == '%')
+		{
+			recorrer++;
+			_putchar(*recorrer);
+		}
 		if (*recorrer != '\0')
+		{
 			recorrer++;
+		}
 		while (*recorrer == ' ')
+		{
 			recorrer++;
+		}
 		while (recorrer != NULL && *recorrer != '\0')
 		{
 			if (a == 1)

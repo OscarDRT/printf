@@ -10,7 +10,7 @@ void op_char(va_list a)
 {
 	_putchar(va_arg(a, int));
 }
-/**
+
 void op_string(va_list a)
 {
 	char *pl;
@@ -21,6 +21,7 @@ void op_string(va_list a)
 		_putchar(pl[i]);
 	}
 }
+/**
 void op_int_b10(va_list a)
 {
 	_putchar(va_arg(a, int));
