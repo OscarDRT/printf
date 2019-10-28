@@ -7,7 +7,7 @@
 typedef struct data
 {
 	char *formato;
-	int (*f)(int n, ...);
+	int (*f)(va_list);
 } formaton ;
 int _putchar(char c);
 int _printf(const char *format, ...);
