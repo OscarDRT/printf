@@ -1,13 +1,16 @@
 #include "holberton.h"
 
-/*void op_mod(va_list a)
+/**
+void op_mod(va_list a)
 {
 	_putchar(va_arg(a, int));
-}*/
+}
+*/
 void op_char(va_list a)
 {
 	_putchar(va_arg(a, int));
 }
+/**
 void op_string(va_list a)
 {
 	char *pl;
@@ -26,3 +29,4 @@ void op_integer(va_list a)
 {
 	_putchar(va_arg(a, int));
 }
+*/
