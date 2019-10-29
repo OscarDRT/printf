@@ -1,35 +1,38 @@
 #include "holberton.h"
-
 /**
-void op_mod(va_list a)
-{
-	_putchar(va_arg(a, int));
-}
-*/
+ * op_char - Prints char
+ * @a: Char to print
+ * Return: Number of characters of the char
+ */
 int op_char(va_list a)
 {
 	_putchar(va_arg(a, int));
 	return (1);
 }
-
+/**
+ * op_string - Prints string
+ * @a: String to print
+ * Return: Number of characters of the string
+ */
 int op_string(va_list a)
 {
-	char *pl;
-	int i;
-	pl = va_arg(a, char *);
-	for (i = 0; *pl; i++)
+	char *pl = va_arg(a, char *);
+	int i  = 0;
+
+	if (pl == NULL)
+	{
+		pl = "(null)";
+		while (pl[i] != '\0')
+		{
+			_putchar(pl[i]);
+			i++;
+		}
+		return (0);
+	}
+	while (pl && pl[i] != '\0')
 	{
 		_putchar(pl[i]);
+		i++;
 	}
 	return (i);
 }
-/**
-void op_int_b10(va_list a)
-{
-	_putchar(va_arg(a, int));
-}
-void op_integer(va_list a)
-{
-	_putchar(va_arg(a, int));
-}
-*/
