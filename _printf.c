@@ -11,10 +11,11 @@ int _printf(const char *format, ...)
 	int conteo;
 	va_list o;
 
-	va_start(o, format);
 	if (format == NULL)
 		return (-1);
+	va_start(o, format);
 	conteo = iteration(format, o);
+	va_end(o);
 	return (conteo);
 }
 /**
@@ -66,5 +67,6 @@ int iteration(const char *format, va_list o)
 			recorrer++;
 		}
 	}
+
 return (conteo);
 }
