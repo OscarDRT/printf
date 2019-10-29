@@ -2,12 +2,13 @@
 #define HOLBERTON_H
 
 #include <stdarg.h>
+#include <stdlib.h>
 
 typedef struct data
 {
 	char *formato;
-	int (*f)(int n, ...);
-} formaton ;
+	void (*f)(va_list);
+} data;
 int _putchar(char c);
 int _printf(const char *format, ...);
 void op_char(va_list a);
