@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 	int conteo;
 	va_list o;
 
-	if (format == NULL)
+	if (format == NULL || o == NULL)
 		return (-1);
 	va_start(o, format);
 	conteo = iteration(format, o);
@@ -33,6 +33,8 @@ int iteration(const char *format, va_list o)
 	{
 		if (*recorrer == '%')
 		{
+			if (*(recorrer + 1) == '\0')
+				return (-1);
 			while (*(recorrer + 1) == ' ')
 				recorrer++;
 			if (*(recorrer + 1) == '%')
@@ -42,8 +44,6 @@ int iteration(const char *format, va_list o)
 				conteo++;
 				a = 1;
 			}
-			else if (*(recorrer + 1) == '\0')
-				return (-1);
 			else if (*(recorrer + 1) == 'c')
 			{
 			conteo = conteo + op_char(o);
