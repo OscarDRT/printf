@@ -8,5 +8,7 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 int op_char(va_list a);
 int op_string(va_list a);
+int op_decimal(va_list a);
+int op_integer(va_list a);
 
 #endif

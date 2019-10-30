@@ -56,6 +56,18 @@ int iteration(const char *format, va_list o)
 			recorrer += 2;
 			a = 1;
 			}
+			else if (*(recorrer + 1) == 'd')
+			{
+			conteo = conteo + op_string(o);
+			recorrer += 2;
+			a = 1;
+			}
+			else if (*(recorrer + 1) == 'i')
+			{
+			conteo = conteo + op_string(o);
+			recorrer += 2;
+			a = 1;
+			}
 			else
 			{
 				recorrer++;
