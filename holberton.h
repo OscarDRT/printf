@@ -4,11 +4,17 @@
 #include <stdarg.h>
 #include <stdlib.h>
 
+/**
+ * struct data - Struct data
+ *
+ * @c: Member char
+ * @fun: The function associated
+ */
 typedef struct data
 {
 	char c;
 	int (*fun)(va_list list);
-}data;
+} data;
 
 
 int _putchar(char c);

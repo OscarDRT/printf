@@ -1,0 +1,66 @@
+.Dd 10/29/2019
+.Dt _Printf 3
+.Os HolbertonSchool
+.Sh NAME
+.Nm _Printf - Custom printf for holberton
+.Sh SYNOPSIS
+.Xr _printf "''FORMAT'', arg0, arg1, ..."
+.Sh DESCRIPTION
+Print ARGUMENT(s) according to the FORMAT provided.
+
+
+FORMAT is the ona that handles the output type.
+
+
+.Pp
+1. Default instructions
+.Bl -tag -width -indent
+.It \e\e
+backslash
+.It \eb
+backspace
+.It \ee
+escape
+.It \en
+new line
+
+.Pp
+2. Instructions created by ourselves:
+.Bl -tag -width -indent
+.It %%
+a single %
+.It %s
+print the ARGUMENT of type String
+.It %c
+print the ARGUMENT of type Char
+
+.Sh EXAMPLES
+These are examples on the _printf use. You will see the command and then the output
+
+.Bl -tag -width -indent
+
+_printf("%%");
+
+> %
+
+_printf("%s", "Esto es una prueba");
+
+> Esto es una prueba
+
+_printf("%c", 'C');
+
+> C
+
+_printf("%d", 65);
+
+> 65
+
+_printf("%i", 100);
+
+> 100
+
+.Sh AUTHORS
+Written by
+.Bl -tag -width -indent
+.It Pa Camilo Morales
+.It Pa Oscar Riaño Tapias
