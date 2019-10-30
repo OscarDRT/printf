@@ -27,7 +27,7 @@ int op_string(va_list a)
 			_putchar(pl[i]);
 			i++;
 		}
-		return (0);
+		return (i);
 	}
 	while (pl && pl[i] != '\0')
 	{
