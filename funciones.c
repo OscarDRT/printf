@@ -36,29 +36,3 @@ int op_string(va_list a)
 	}
 	return (i);
 }
-/**
- *
- */
-int op_decimal(va_list a)
-{
-	int i = 0;
-	int n = va_arg(a, int);
-
-	if (n < 0)
-	{
-		new = -n;
-		_putchar('-');
-		i++;
-	}
-	else
-		new = n;
-	x = 1;
-	return (0);
-}
-/**
- *
- */
-int op_integer(va_list a)
-{
-	return (0);
-}
