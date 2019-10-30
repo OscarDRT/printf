@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 int iteration(const char *format, va_list o)
 {
 	const char *recorrer;
-	int conteo;
+	int conteo = 0, a;
 
 	for (recorrer = format; recorrer && *recorrer != '\0';)
 	{
@@ -40,25 +40,33 @@ int iteration(const char *format, va_list o)
 				_putchar(*(recorrer + 1));
 				recorrer += 2;
 				conteo++;
+				a = 1;
 			}
+			else if (*(recorrer + 1) == '\0')
+				return (-1);
 			else if (*(recorrer + 1) == 'c')
 			{
 			conteo = conteo + op_char(o);
 			recorrer += 2;
+			a = 1;
 			}
 			else if (*(recorrer + 1) == 's')
 			{
 			conteo = conteo + op_string(o);
 			recorrer += 2;
-			}
-			else if (*recorrer != 'c' && *recorrer != ' '
-			&& *recorrer != '%' && *recorrer != '\0')
-			{
-				_putchar(*recorrer);
-				recorrer++;
+			a = 1;
 			}
 			else
+			{
 				recorrer++;
+				if (a == 0 && *(recorrer - 1) == '%')
+				{
+					_putchar(*(recorrer - 1));
+					_putchar(*recorrer);
+					conteo += 2;
+				}
+				recorrer++;
+			}
 		}
 		else
 		{
