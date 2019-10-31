@@ -29,7 +29,7 @@ int help(const char *format, va_list list)
 			{
 				_putchar(*(format - 1));
 				_putchar(*format);
-				count++;
+				count += 2;
 			}
 				i = 0;
 			while (i < 2)
